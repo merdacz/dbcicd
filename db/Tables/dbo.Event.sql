@@ -9,5 +9,7 @@ CREATE TABLE [dbo].[Event]
 GO
 ALTER TABLE [dbo].[Event] ADD CONSTRAINT [PK_Event] PRIMARY KEY CLUSTERED  ([Id]) ON [PRIMARY]
 GO
+CREATE NONCLUSTERED INDEX [NonClusteredIndex-20170517-180553] ON [dbo].[Event] ([EventType]) ON [PRIMARY]
+GO
 ALTER TABLE [dbo].[Event] ADD CONSTRAINT [FK_Event_EventTypes] FOREIGN KEY ([EventType]) REFERENCES [dbo].[EventTypes] ([Id])
 GO

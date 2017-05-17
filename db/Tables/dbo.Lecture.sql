@@ -9,5 +9,7 @@ CREATE TABLE [dbo].[Lecture]
 GO
 ALTER TABLE [dbo].[Lecture] ADD CONSTRAINT [PK_Lecture] PRIMARY KEY CLUSTERED  ([Id]) ON [PRIMARY]
 GO
+CREATE NONCLUSTERED INDEX [NonClusteredIndex-20170517-174011] ON [dbo].[Lecture] ([EventId]) ON [PRIMARY]
+GO
 ALTER TABLE [dbo].[Lecture] ADD CONSTRAINT [FK_Lecture_Event] FOREIGN KEY ([EventId]) REFERENCES [dbo].[Event] ([Id])
 GO
